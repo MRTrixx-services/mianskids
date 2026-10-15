@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Mians Kids Play School{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container hero-grid">
+
+      <div class="hero-content">
+        <div class="breadcrumb">Home <span>›</span> Contact Us</div>
+        <div class="section-tag">💌 We'd Love To Hear From You</div>
+        <h1>Let's Start A <span>Little Conversation.</span></h1>
+        <p>Have a question about our programs, admissions, school timings or want to visit us? Our friendly team is always happy to help you and your little one take the next step.</p>
+      </div>
+
+      <div class="hero-illustration">
+        <img src="https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=1000&q=85" alt="Happy children at school">
+        <div class="hero-badge">🌈 Come Say Hello!</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT FORM + INFO -->
+  <section class="section contact-section" id="contactForm">
+    <div class="container contact-grid">
+
+      <div class="contact-info">
+        <h2>Say Hello! 👋</h2>
+        <p>Whether you're exploring schools for the first time or already part of our Mians Kids family, we're here to answer your questions.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><h4>Visit Us</h4><p>No: 93/1, Annai Nagar,<br>Via Kannan Nagar, Poovalur Road,<br>Lalgudi, Trichy</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><h4>Call Us</h4><a href="tel:+918220517822">+91 82205 17822</a><br><a href="tel:+919688209236">+91 96882 09236</a><p>Mon – Sat · 9:30 AM – 3:00 PM</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div><h4>Email Us</h4><a href="mailto:contact@mianskids.in">contact@mianskids.in</a><p>We usually reply within one working day.</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div><h4>School Hours</h4><p>Monday – Saturday · 9:30 AM – 3:00 PM</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🏛️</div>
+          <div><h4>Recognition</h4><p>Recognized by the Government of Tamil Nadu</p></div>
+        </div>
+
+        <div class="social-title">Follow our little adventures</div>
+        <div class="socials-contact">
+          <a href="#">f</a>
+          <a href="#">◎</a>
+          <a href="#">▶</a>
+          <a href="#">◉</a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Admission Enquiry</h3>
+
+        {% if success %}
+        <div style="background:#d4edda;color:#155724;border:1px solid #c3e6cb;border-radius:8px;padding:16px 20px;margin-bottom:20px;font-weight:600;">
+          🌟 Thank you! Your enquiry has been received. Our team will contact you shortly.
+        </div>
+        {% endif %}
+
+        <form id="enquiryForm" method="post" action="{% url 'contact' %}#contactForm">
+          {% csrf_token %}
+          <div class="form-grid">
+            <div class="input-group"><label>Parent / Guardian Name</label><input type="text" name="parent_name" placeholder="Your full name" required></div>
+            <div class="input-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+            <div class="input-group"><label>Child's Name</label><input type="text" name="child_name" placeholder="Child's name"></div>
+            <div class="input-group"><label>Email Address</label><input type="email" name="email" placeholder="you@example.com"></div>
+            <div class="input-group"><label>Child's Age</label>
+              <select name="child_age">
+                <option value="">Select age</option>
+                <option>2 – 3 Years</option>
+                <option>3 – 4 Years</option>
+                <option>4 – 5 Years</option>
+                <option>5 – 6 Years</option>
+              </select>
+            </div>
+            <div class="input-group"><label>Interested Program</label>
+              <select name="program">
+                <option value="">Select a program</option>
+                <option>Day Care</option>
+                <option>Play Group</option>
+                <option>Pre-KG</option>
+                <option>Junior KG (LKG)</option>
+                <option>Senior KG (UKG)</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="input-group full"><label>Your Message</label><textarea name="message" placeholder="Tell us how we can help..."></textarea></div>
+          </div>
+          <button type="submit" class="submit-btn">Send Enquiry →</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- QUICK CONTACT -->
+  <section class="section quick-contact">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-tag">💜 Quick & Easy</div>
+        <h2>Need An Answer Right Away?</h2>
+        <p>Choose the easiest way to connect with our team.</p>
+      </div>
+      <div class="quick-grid">
+        <div class="quick-card">
+          <div class="quick-icon">📞</div>
+          <h3>Give Us A Call</h3>
+          <p>Speak directly with our admissions team and get your questions answered.</p>
+          <a href="tel:+918220517822" class="quick-link">+91 82205 17822 →</a>
+        </div>
+        <div class="quick-card">
+          <div class="quick-icon">💬</div>
+          <h3>WhatsApp Us</h3>
+          <p>Send us a quick message and we'll help you with admissions and school information.</p>
+          <a href="#" class="quick-link">Chat With Us →</a>
+        </div>
+        <div class="quick-card">
+          <div class="quick-icon">🏫</div>
+          <h3>Visit Our School</h3>
+          <p>Come see our classrooms, meet our educators and experience Mians Kids yourself.</p>
+          <a href="#visit" class="quick-link">Plan A Visit →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VISIT US -->
+  <section class="section visit-section" id="visit">
+    <div class="container visit-grid">
+
+      <div class="visit-content">
+        <div class="section-tag">🏫 Come Visit Us</div>
+        <h2>See Where The Magic Happens.</h2>
+        <p>A school is more than just classrooms. Come spend some time with us, meet our team and see why children love being here.</p>
+        <ul class="visit-list">
+          <li><span>✓</span> Explore our child-friendly classrooms</li>
+          <li><span>✓</span> Meet our experienced educators</li>
+          <li><span>✓</span> Learn about our programs</li>
+          <li><span>✓</span> Understand our daily routine</li>
+          <li><span>✓</span> Ask all your admission questions</li>
+        </ul>
+      </div>
+
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0418061333735!2d78.81619927504343!3d10.884424889270997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf1003bcbd5cd%3A0xff0d74040805db17!2sMIAN&#39;S%20KIDS%20PLAY%20SCHOOL!5e0!3m2!1sen!2sin!4v1791972892221!5m2!1sen!2sin" width="100%" height="420" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Your Child's Happy Journey Starts Here. 🌟</h2>
+          <p>Have questions? Don't hesitate to reach out. We're excited to meet you and your little one.</p>
+        </div>
+        <a href="#contactForm" class="cta-btn">Send An Enquiry →</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  {% if success %}
+  document.getElementById("contactForm").scrollIntoView({ behavior: "smooth" });
+  {% endif %}
+
+  const revealItems = document.querySelectorAll(".quick-card, .contact-item, .visit-content, .map-box");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity .6s ease, transform .6s ease";
+    observer.observe(el);
+  });
+</script>
+{% endblock %}
