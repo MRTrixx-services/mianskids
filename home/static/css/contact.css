@@ -186,6 +186,34 @@
 
 .contact-item a:hover { color: white; }
 
+/* Call link override inside purple contact-info panel */
+.contact-info .call-link {
+  background: rgba(255,255,255,.15);
+  color: white;
+  border-color: rgba(255,255,255,.35);
+}
+
+.contact-info .call-link svg { color: #a8f0c6; }
+
+.contact-info .call-link .tap-hint {
+  background: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.85);
+}
+
+.contact-info .call-link:hover {
+  background: white;
+  color: var(--purple-dark);
+  border-color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+
+.contact-info .call-link:hover svg { color: var(--purple); }
+
+.contact-info .call-link:hover .tap-hint {
+  background: var(--purple-light);
+  color: var(--purple);
+}
+
 .social-title {
   font-size: 13px;
   margin-top: 32px;
