@@ -158,12 +158,60 @@ button {
 }
 
 /* =========================================================
+   ANNOUNCEMENT BAR
+========================================================= */
+.announce-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  background: linear-gradient(90deg, var(--purple-dark), var(--purple));
+  color: white;
+  height: 40px;
+}
+
+.announce-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.announce-inner marquee {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: rgba(255,255,255,.92);
+}
+
+.announce-btn {
+  flex-shrink: 0;
+  background: var(--yellow);
+  color: var(--purple-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-right: 16px;
+  white-space: nowrap;
+  transition: .2s;
+}
+
+.announce-btn:hover {
+  background: white;
+  color: var(--purple);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
    HEADER / NAVBAR
 ========================================================= */
 header {
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 40px;
   left: 0;
   z-index: 1000;
   padding: 18px 0;
@@ -430,7 +478,7 @@ footer {
 
   .nav-links {
     position: absolute;
-    top: 78px;
+    top: 118px;
     left: 4%;
     width: 92%;
     background: white;

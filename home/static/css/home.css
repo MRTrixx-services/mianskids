@@ -3,7 +3,7 @@
 ========================================================= */
 .hero {
   min-height: 780px;
-  padding-top: 140px;
+  padding-top: 180px;
   display: flex;
   align-items: center;
   position: relative;
@@ -330,7 +330,7 @@
 
 .program-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 
@@ -702,14 +702,15 @@
 ========================================================= */
 @media (max-width: 1000px) {
   .hero-grid, .about-grid { gap: 45px; }
-  .highlight-grid, .program-grid { grid-template-columns: repeat(2,1fr); }
+  .highlight-grid { grid-template-columns: repeat(2,1fr); }
+  .program-grid { grid-template-columns: repeat(3, 1fr); }
   .highlight-card:nth-child(2) { border-right: 0; }
   .highlight-card:nth-child(-n+2) { border-bottom: 1px solid #eee9f4; }
   .program-grid { gap: 15px; }
 }
 
 @media (max-width: 760px) {
-  .hero { min-height: auto; padding: 135px 0 80px; }
+  .hero { min-height: auto; padding: 175px 0 80px; }
   .hero-grid, .about-grid, .approach-grid, .contact-grid { grid-template-columns: 1fr; }
   .hero-content { text-align: center; }
   .hero-content p { margin-left: auto; margin-right: auto; }
@@ -719,6 +720,7 @@
   .floating-card.two { right: 5px; }
   .highlights { margin-top: -25px; }
   .highlight-grid { grid-template-columns: 1fr 1fr; }
+  .program-grid { grid-template-columns: repeat(2, 1fr); }
   .about-images { padding: 15px; }
   .about-main { height: 400px; }
   .about-small { width: 145px; height: 145px; }
